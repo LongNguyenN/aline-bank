@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-								sh "mvn clean pack -DskipTests"
+								sh "mvn clean package -DskipTests"
             }
         }
         stage('Test') {
