@@ -11,14 +11,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-				//sh "mvn clean package -DskipTests"
+				        sh "mvn clean package -DskipTests"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
                 withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
-                    //sh "mvn clean verify sonar:sonar"
+                    sh "mvn clean verify sonar:sonar"
                 }
             }
         }
