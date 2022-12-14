@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-				        sh "mvn clean package -DskipTests"
+	            sh "mvn clean package -DskipTests"
             }
         }
         stage('Test') {
@@ -43,7 +43,8 @@ pipeline {
     }
     post { 
         always { 
-            echo 'I will always say Hello again!'
+            echo 'Clean workspace...'
+            cleanWs()
         }
     }
 }
