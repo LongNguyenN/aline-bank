@@ -39,12 +39,11 @@ pipeline {
                     }
                 }
             }
-        }    
+        }
     }
     post { 
         always { 
-            echo 'cleaning workspace'
-            //cleanWs()
+            echo 'I will always say Hello again!'
         }
     }
 }
